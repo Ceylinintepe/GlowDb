@@ -1,0 +1,89 @@
+﻿@model IEnumerable<GlowDb.Models.Urunler>
+
+@{
+    ViewBag.Title = "Favorilerim";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>GlowBox - Favorilerim</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f8f5fc;
+            margin: 0;
+        }
+
+        header {
+            background: #51277e;
+            color: white;
+            padding: 25px 50px;
+        }
+
+        .container {
+            padding: 40px;
+        }
+
+        h2 {
+            color: #51277e;
+        }
+
+        .urun {
+            background: white;
+            border: 1px solid #e5d8ef;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+            .urun h3 {
+                color: #51277e;
+            }
+
+        a {
+            display: inline-block;
+            background: #6c3b96;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>GLOWBOX </h1>
+        <p>Favori Ürünlerim</p>
+    </header>
+
+    <div class="container">
+
+        <h2>Favorilerim</h2>
+
+        @if (Model.Any())
+        {
+            foreach (var urun in Model)
+            {
+                <div class="urun">
+                    <h3>@urun.UrunAdi</h3>
+                    <p><b>Marka:</b> @urun.Marka</p>
+                    <p>@urun.Aciklama</p>
+                </div>
+            }
+        }
+        else
+        {
+            <p>Henüz favori ürününüz bulunmuyor.</p>
+        }
+
+        <a href="/Urun/Index">Ürünlere Geri Dön</a>
+
+    </div>
+
+</body>
+</html>

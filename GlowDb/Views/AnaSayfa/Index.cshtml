@@ -1,0 +1,159 @@
+﻿@{
+    ViewBag.Title = "GlowBox";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>GlowBox</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color: #f8f5fc;
+        }
+
+        header {
+            background-color: #51277e;
+            color: white;
+            padding: 25px 60px;
+        }
+
+            header h1 {
+                font-size: 32px;
+                margin: 0;
+            }
+
+        nav {
+            background-color: #6c3b96;
+            padding: 15px 60px;
+        }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                margin-right: 30px;
+                font-size: 15px;
+            }
+
+        .icerik {
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+            .icerik h2 {
+                color: #51277e;
+                font-size: 35px;
+            }
+
+            .icerik p {
+                color: #555;
+                font-size: 17px;
+            }
+
+        .buton {
+            background-color: #6c3b96;
+            color: white;
+            padding: 13px 25px;
+            text-decoration: none;
+            border-radius: 7px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .kartlar {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 30px;
+            flex-wrap: wrap;
+        }
+
+        .kart {
+            background-color: white;
+            width: 220px;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e2d5ef;
+        }
+
+            .kart h3 {
+                color: #51277e;
+            }
+
+        footer {
+            background-color: #51277e;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>GLOWBOX</h1>
+        <p>Kişisel Bakım ve Kozmetik Ürün Takip Platformu</p>
+    </header>
+
+    <nav>
+        <a href="/AnaSayfa/Index">Ana Sayfa</a>
+        <a href="#">Ürünler</a>
+        <a href="#">Kategoriler</a>
+        <a href="#">Favoriler</a>
+        <a href="#">Alışveriş Listem</a>
+        <a href="#">Giriş Yap</a>
+    </nav>
+
+    <div class="icerik">
+        <h2>Güzellik ve Bakım Dünyana Hoş Geldin!</h2>
+
+        <p>
+            Kozmetik ve kişisel bakım ürünlerini
+            tek bir yerden kolayca yönet.
+        </p>
+
+        <p>
+            Favorilerini kaydet, ürünlerini değerlendir
+            ve alışveriş listeni oluştur.
+        </p>
+
+        <a href="#" class="buton">Ürünleri Keşfet</a>
+    </div>
+
+    <div class="kartlar">
+
+        <div class="kart">
+            <h3>Ürünlerim</h3>
+            <p>Kişisel ürünlerini kolayca listele ve yönet.</p>
+        </div>
+
+        <div class="kart">
+            <h3>Favorilerim</h3>
+            <p>Beğendiğin ürünleri favorilerine ekle.</p>
+        </div>
+
+        <div class="kart">
+            <h3>Ürün Notlarım</h3>
+            <p>Ürünler hakkında notlarını ve puanlarını kaydet.</p>
+        </div>
+
+        <div class="kart">
+            <h3>Alışveriş Listem</h3>
+            <p>Satın almak istediğin ürünleri takip et.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 GlowBox - Kişisel Bakım Platformu</p>
+    </footer>
+
+</body>
+</html>

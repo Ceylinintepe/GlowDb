@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a292d20ea239459797922871697e79a7" Name="Diagram1">
+        <EntityTypeShape EntityType="GlowDbModel.AlisverisListesi" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlowDbModel.Favoriler" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlowDbModel.Kategoriler" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlowDbModel.Kullanicilar" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlowDbModel.Urunler" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="GlowDbModel.FK__Alisveris__Kulla__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="GlowDbModel.FK__Alisveris__UrunI__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="GlowDbModel.FK__Favoriler__Kulla__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="GlowDbModel.FK__Favoriler__UrunI__1920BF5C" ManuallyRouted="false" />
+        <AssociationConnector Association="GlowDbModel.FK__Urunler__Kategor__15502E78" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

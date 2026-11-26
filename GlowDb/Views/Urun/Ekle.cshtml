@@ -1,0 +1,117 @@
+﻿@model GlowDb.Models.Urunler
+
+@{
+    ViewBag.Title = "Ürün Ekle";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>GlowBox - Ürün Ekle</title>
+
+    <style>
+        body {
+            background: #f8f5fc;
+            font-family: Arial;
+            margin: 0;
+        }
+
+        header {
+            background: #51277e;
+            color: white;
+            padding: 25px 50px;
+        }
+
+        .form-kutu {
+            background: white;
+            width: 450px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 12px;
+ 
+        }
+
+        h2 {
+            color: #51277e;
+          
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            color: #51277e;
+            font-weight: bold;
+        }
+
+        input,select {
+            width: 100%;
+            padding: 11px;
+            margin-top: 7px;
+            border: 1px solid #d8c7e8;
+            border-radius: 6px;
+        }
+
+        button {
+            background: #6c3b96;
+            color: white;
+            border: none;
+            padding: 13px;
+            width: 100%;
+            margin-top: 22px;
+        }
+
+            button:hover {
+                background: #51277e;
+            }
+
+        a {
+            color: #6c3b96;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>GLOWBOX</h1>
+        <p>Ürün Yönetim Sistemi</p>
+    </header>
+
+    <div class="form-kutu">
+
+        <h2>Yeni Ürün Ekle</h2>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <label>Ürün Adı</label>
+            @Html.TextBoxFor(x => x.UrunAdi, new { required = "required" })
+
+            <label>Marka</label>
+            @Html.TextBoxFor(x => x.Marka, new { required = "required" })
+
+            <label>Açıklama</label>
+            @Html.TextAreaFor(x => x.Aciklama, new { rows = "4" })
+
+            <label>Kategori</label>
+            @Html.DropDownListFor(
+                x => x.KategoriID,
+                (SelectList)ViewBag.KategoriID,
+                "Kategori Seçiniz",
+                new { required = "required" }
+            )
+
+            <button type="submit">Ürünü Kaydet</button>
+        }
+
+        <a href="/Urun/Index">Ürün Listesine Dön</a>
+
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,133 @@
+﻿@model IEnumerable<GlowDb.Models.Urunler>
+
+@{
+    ViewBag.Title = "Ürünler";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>GlowBox - Ürünler</title>
+
+    <style>
+        body {
+            background: #f8f5fc;
+            margin: 0;
+        }
+
+        header {
+            background: #51277e;
+            color: white;
+            padding: 25px 50px;
+        }
+
+        .container {
+            padding: 40px;
+        }
+
+        h2 {
+            color: #51277e;
+        }
+
+        table {
+            width: 100%;
+            background: white;
+        }
+
+        th {
+            background: #51277e;
+            color: white;
+            padding: 15px;
+        }
+
+        td {
+            padding: 15px;
+            border: 1px solid #e5d8ef;
+        }
+
+        tr:nth-child(even) {
+            background: #f1eafa;
+        }
+
+        button {
+            background: #6c3b96;
+            color: white;
+            border: none;
+            padding: 9px 13px;
+            border-radius: 5px;
+            margin: 3px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>GLOWBOX</h1>
+        <p>Ürün Yönetim Sistemi</p>
+    </header>
+
+    <div class="container">
+
+        <h2>Ürünlerim</h2>
+
+        <table>
+            <tr>
+                <th>Ürün ID</th>
+                <th>Ürün Adı</th>
+                <th>Marka</th>
+                <th>Açıklama</th>
+                <th>Kategori ID</th>
+                <th>İşlemler</th>
+            </tr>
+
+            @foreach (var urun in Model)
+            {
+                <tr>
+                    <td>@urun.UrunID</td>
+                    <td>@urun.UrunAdi</td>
+                    <td>@urun.Marka</td>
+                    <td>@urun.Aciklama</td>
+                    <td>@urun.KategoriID</td>
+
+                    <td>
+                        @Html.ActionLink("Düzenle", "Duzenle",
+                            new { id = urun.UrunID })
+
+                        @using (Html.BeginForm("Sil", "Urun",
+                            new { id = urun.UrunID }, FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            <button type="submit"
+                                    onclick="return confirm('Bu ürünü silmek istiyor musunuz?');">
+                                Sil
+                            </button>
+                        }
+
+                        <form action="@Url.Action("FavoriyeEkle", "Urun", new { id = urun.UrunID })" method="post">
+                            <button type="submit"> Favorilere Ekle</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+        <br />
+
+        <a href="/Urun/Ekle"
+           style="background:#6c3b96;color:white;padding:12px 20px;border-radius:6px;">
+            + Yeni Ürün Ekle
+        </a>
+
+        <a href="/Urun/Favorilerim"
+           style="background:#51277e;color:white;padding:12px 20px;border-radius:6px;margin-left:10px;">
+             Favorilerim
+        </a>
+
+    </div>
+
+</body>
+</html>
